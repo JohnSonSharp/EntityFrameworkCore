@@ -172,6 +172,7 @@ namespace Microsoft.EntityFrameworkCore.Infrastructure
             TryAdd<INamedConnectionStringResolver, NamedConnectionStringResolver>();
             TryAdd<IEvaluatableExpressionFilter, RelationalEvaluatableExpressionFilter>();
             TryAdd<IRelationalTransactionFactory, RelationalTransactionFactory>();
+            TryAdd<INodeTypeProviderFactory, RelationalMethodInfoBasedNodeRegistryFactory>();
 
             TryAdd<ISingletonUpdateSqlGenerator>(p =>
             {

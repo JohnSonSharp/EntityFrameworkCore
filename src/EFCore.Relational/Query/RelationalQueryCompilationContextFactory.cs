@@ -3,7 +3,6 @@
 
 using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore.Query.Internal;
-using Microsoft.EntityFrameworkCore.Query.ResultOperators.Internal;
 using Microsoft.EntityFrameworkCore.Utilities;
 
 namespace Microsoft.EntityFrameworkCore.Query
@@ -23,10 +22,6 @@ namespace Microsoft.EntityFrameworkCore.Query
             : base(dependencies)
         {
             Check.NotNull(relationalDependencies, nameof(relationalDependencies));
-
-            relationalDependencies
-                .NodeTypeProviderFactory
-                .RegisterMethods(FromSqlExpressionNode.SupportedMethods, typeof(FromSqlExpressionNode));
         }
 
         /// <summary>
